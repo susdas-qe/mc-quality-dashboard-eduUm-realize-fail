@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: backend-quality-dashboard-3cnq
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: backend-quality-dashboard-3cnq
+    app.kubernetes.io/part-of: mc-quality-dashboard
+  name: backend-quality-dashboard-3cnq
+spec:
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: backend-quality-dashboard-3cnq
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/instance: backend-quality-dashboard-3cnq
+    spec:
+      containers:
+      - image: image
+        imagePullPolicy: Always
+        name: container-image
+        ports:
+        - containerPort: 8081
+        resources: {}
+status: {}
